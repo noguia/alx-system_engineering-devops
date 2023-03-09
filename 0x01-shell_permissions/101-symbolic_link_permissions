@@ -1,2 +1,2 @@
-#!/bin/bash 
-chwon -h vincent staff_hello
+#!/bin/bash
+chwon -h vincent staff hello
