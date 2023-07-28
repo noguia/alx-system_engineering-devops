@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script displays current directory content in a special format
+for i in *
+do
+	var=$(find . -name "$i" | cut -d '/' -f 2 |cut -d '-' -f 2)
+	echo "$var"
+done
