@@ -1,4 +1,4 @@
-rc="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/1200px-Gnu-bash-logo.svg.png" width=490 height=200>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/1200px-Gnu-bash-logo.svg.png" width=490 height=200>
 
 # 0x04-loops_conditions_and_parsing
 
