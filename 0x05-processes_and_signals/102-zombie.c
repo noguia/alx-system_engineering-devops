@@ -1,49 +1,44 @@
-nclude <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/wait.h>
+nclude <sys/types.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int infinite_while(void);
 
 /**
-* infinite_while - Run an infinite while loop.
-* Made by NOGUIAA
-* Return: Always ZERO
-*/
-
-int infinite_while(void)
-{
-	while (1)
-	{
-		sleep(1);
-	}
-	return (0);
-}
-
-/**
-* main - Creates five zombie processes.
-* Made by MEGATRON
-* Return: Always WERO
-*/
-
+ * main - creates 5 zombie processes
+ * Description: create 5 zombie processes in a linux besed system,
+ * keep running indefinitely until receiving a signal to terminate
+ *
+ * Return: always 0 (Success)
+ */
 int main(void)
 {
 	pid_t pid;
-	char cnt = 0;
+	short i;
 
-	while (cnt < 5)
+	for (i = 0; i < 5; i++)
 	{
 		pid = fork();
-		if (pid > 0)
+		if (!pid)
 		{
-			printf("Zombie process created, PID: %d\n", pid);
-			sleep(1);
-			cnt++;
+			printf("Zombie process created, PID: %d\n", getpid());
+			exit(1);
 		}
-		else
-			exit(0);
 	}
 
-	infinite_while();
+	return (infinite_while());
+}
 
-	return (EXIT_SUCCESS);
+/**
+ * infinite_while - while loop that runs forever
+ *
+ * Return: 0
+ */
+int infinite_while(void)
+{
+	while (1)
+		sleep(1);
+
+	return (0);
 }
